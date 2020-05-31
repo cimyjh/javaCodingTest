@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
+
+//vo 객체 생성 및 생성자 만들기
 class Interval{
     int start;
     int end;
@@ -25,14 +27,19 @@ public class MeetingRooms {
         Interval in3 = new Interval(0, 30);
      
         Interval[] intervals = {in1, in2, in3};
+
+        //객체를 메소드의 실행이 되도록 함
+        //MVC에서 Service단과 비슷하다.
         System.out.println(a.solve(intervals));
     }
 
     public boolean solve(Interval[] intervals) {
 
+        //예외처리
         if(intervals == null) return false;
         print(intervals);
 
+        //
         Arrays.sort(intervals, Comp);
         System.out.println("===afrer sort ===");
         print(intervals);
@@ -51,6 +58,7 @@ public class MeetingRooms {
         }
     }
 
+    //크기 비교를 Comparator 사용. Override 과정이 필요하다.
     Comparator<Interval> Comp = new Comparator<Interval>(){
 
         @Override
