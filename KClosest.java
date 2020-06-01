@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//강의 제대로 들어야 한다.
 public class KClosest {
     public static void main(String[] args) {
         List<List<Integer>> list = new ArrayList<List<Integer>>();
