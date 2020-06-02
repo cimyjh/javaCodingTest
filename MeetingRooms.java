@@ -17,6 +17,10 @@ class Interval{
     }
 }
 
+//sorting을 먼저 한다.
+//hold.end > cur.start
+
+
 
 public class MeetingRooms {
     public static void main(String[] args) {
@@ -36,6 +40,7 @@ public class MeetingRooms {
     public boolean solve(Interval[] intervals) {
 
         //예외처리
+        //null 체크
         if(intervals == null) return false;
         print(intervals);
 
@@ -44,6 +49,7 @@ public class MeetingRooms {
         System.out.println("===afrer sort ===");
         print(intervals);
 
+        //반복문을 돌려서 조건체크
         for(int i = 1; i < intervals.length; i++){
             if(intervals[i-1].end > intervals[i].start)
             return false;
@@ -60,7 +66,6 @@ public class MeetingRooms {
 
     //크기 비교를 Comparator 사용. Override 과정이 필요하다.
     Comparator<Interval> Comp = new Comparator<Interval>(){
-
         @Override
         public int compare(Interval a, Interval b){
             return a.start - b.start;
