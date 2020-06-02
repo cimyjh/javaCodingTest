@@ -10,7 +10,20 @@ public class FindAnagramMapping{
 
     public static void print(int[] result){
         for(int i = 0; i < result.length; i++){
-            
+            System.out.println(result[i] + " ");
         }
+    }
+
+    public static int[] anagramMappings(int[] A, int[] B){
+        int l = A.length;
+        int[] res = new int[l];
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i = 0 ; i < l; i++){
+            map.put(B[i], i);
+        }
+        for(int i = 0; i < l; i++){
+            res[i] = map.get(A[i]);
+        }
+        return res;
     }
 }
