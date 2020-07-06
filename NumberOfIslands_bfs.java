@@ -27,7 +27,11 @@ public class NumberOfIslands_bfs {
 				{'1','0','0','1','1'}
 			   };
 		NumberOfIslands_bfs a = new NumberOfIslands_bfs();
-		System.out.println(a.solve(grid));
+        System.out.println(a.solve(grid));
+        
+        int[] array = new int[]{1,2,3,4,5};
+        System.out.println(array);
+
     }
     int[][] dirs = {{-1,0}, {1,0}, {0, -1}, {0,1}};
     int m, n;
@@ -55,7 +59,10 @@ public class NumberOfIslands_bfs {
         grid[x][y] = '0';
         Queue<int[]> queue = new LinkedList<>();
 
+        //1차원 배열을 선언하고 0, 1번 째에 x, y의 값을 갖는다.
         queue.offer(new int[]{x,y});
+
+
         while(!queue.isEmpty()){
             int size = queue.size();
             int[] p = queue.poll();
