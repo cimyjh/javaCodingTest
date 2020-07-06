@@ -1,4 +1,4 @@
-public class NumberOfislands {
+public class NumberOfislands_dfs {
 
     /*
         Graph문제
@@ -19,7 +19,7 @@ public class NumberOfislands {
             {'1','0','0','1','1'}
         };
 
-        NumberOfislands a = new NumberOfislands();
+        NumberOfislands_dfs a = new NumberOfislands_dfs();
         System.out.println(a.numsIslands(grid));
     }
 
