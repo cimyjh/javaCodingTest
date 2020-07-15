@@ -2,6 +2,16 @@ import java.util.*;
 
 
 //이것도 강의를 들어야 한다.
+
+
+/*
+
+    자기 값보다 큰 값이 나오는 날과의 거리를 구하는 것이다.
+    stack을 이용해서 
+
+*/
+
+
 public class DailyTemperature {
     public static void main(String[] args) {
         int[] nums = {73, 74, 75, 71, 69, 72, 76, 73};
@@ -13,10 +23,16 @@ public class DailyTemperature {
     }
 
     public static int[] dailyTemperatures(int[] temperatures){
+
+        //담는 그릇: stack
         Stack<Integer> stack = new Stack<>();
         int[] ret = new int[temperatures.length];
+
+        //이동, 빼내기
         for(int i = 0; i < temperatures.length; i++){
             System.out.println("i: " + i + " " + temperatures[i] );
+
+            //while문으로 스텍을 돌리는 것이다. stack.peek는 값을 읽는 것이다. 제거하는 것 아님. 이걸 현재 온도와 비교
             while(!stack.isEmpty() && temperatures[stack.peek()] < temperatures[i]){
                 System.out.println("b: " + temperatures[i]);
                 int index = stack.pop();
