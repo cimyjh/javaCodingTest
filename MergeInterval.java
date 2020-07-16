@@ -15,9 +15,26 @@ class Interval {
 	}
 }
 
+/*
+
+    sort를 해야한다. 
+        Collections.sort(intervals, (a,b) -> a.start -b.start)
+
+    compare를 사용할 수도 있다.
+
+
+    값들의 절대적인 위치가 아닌, 상대적 위치를 잘 사용할 수 있어야 한다.
+
+
+
+*/
+
+
+
+
 public class MergeInterval {
     public static void main(String[] args) {
-        int[][] nums = {{1,3}, {2, 6}, {8, 10}, {15, 18}};
+        //int[][] nums = {{1,3}, {2, 6}, {8, 10}, {15, 18}};
         Interval in1 = new Interval(1,3);
         Interval in2 = new Interval(2, 6);
         Interval in3 = new Interval(8, 10);
@@ -37,7 +54,10 @@ public class MergeInterval {
 		if (intervals.isEmpty())
 			return intervals;
 
+
+        //sort
 		Collections.sort(intervals, comp2);
+
 
         List<Interval> ans = new LinkedList<Interval>();
         Interval hold = intervals.get(0);
