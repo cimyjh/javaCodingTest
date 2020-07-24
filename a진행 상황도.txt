@@ -9,9 +9,13 @@ String:
     DailyTemperature
     MergeInteval
     MeetingRoom2
+    Jewels And Stones
 
 
-    
+Graph(dfs & bfs)
+    NumberOfIslands_dfs
+
+
 
     
 
