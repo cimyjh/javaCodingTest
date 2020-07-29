@@ -6,7 +6,7 @@ import java.util.*;
 //local에 대해서는 요구사항을 맞추기 위해 String조작
 //local, domain을 다시 합친다.
 public class UniqueEamilAddress {
-	
+
 	public static void main(String[] args) {
 		String[] emails = {"test.email+alex@leetcode.com",
 				           "test.e.mail+bob.cathy@leetcode.com",
@@ -15,11 +15,21 @@ public class UniqueEamilAddress {
 		System.out.println(numUniqueEmails_split(emails));
 	}
 	
+
+	
 	static int numUniqueEmails(String[] emails) {
+
+		//중복을 피할려면 set사용
 		Set<String> uniqueEmails = new HashSet<>();
+
+		
 		for (String email : emails) {
+
+			//분할
 			String localName = getLocalName(email);
 			String domainName = getDomainName(email);
+
+			//계산이후 다시 붙이기
 			uniqueEmails.add(localName + "@" + domainName);
 		}
 		return uniqueEmails.size();
@@ -29,9 +39,12 @@ public class UniqueEamilAddress {
 		return email.substring(email.indexOf('@')+1);
 	}
 
+
 	private static String getLocalName(String email) {
 		StringBuilder sb = new StringBuilder();
 		for (int i=0; i < email.length(); i++) {
+			
+			//. 나왔을 때는 .을 뺴고 패스 하도록 continue
 			if (email.charAt(i) == '.') {
 				continue;
 			}
@@ -48,6 +61,9 @@ public class UniqueEamilAddress {
 		}
 		return sb.toString();
 	}
+
+	
+
 	
 	
 	public static int numUniqueEmails_split(String[] emails) {

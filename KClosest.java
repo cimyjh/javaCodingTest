@@ -3,6 +3,19 @@ import java.util.Arrays;
 import java.util.List;
 
 //강의 제대로 들어야 한다.
+
+
+/*
+
+
+    PriorityQueue사용
+    원점으로부터 거리가 가까운 것을 결과물로 내는 것이다.
+
+    comp사용한다.
+
+
+*/
+
 public class KClosest {
     public static void main(String[] args) {
         List<List<Integer>> list = new ArrayList<List<Integer>>();
@@ -53,5 +66,42 @@ public class KClosest {
             return point[0] * point[0] + point[1] * point[1];
         }
     }
+
+
+
+    public int[][] solve(int[][] points, int k){
+        Queue<int[]> queue = new PriorityQueue<>(points.length, Comp);
+
+        int[][] result = new int[k][2];
+        int index = 0;
+
+        //정렬이 된 것을 queue에 넣는다(offer)
+        for(int[] p: points){
+            queue.offer(p)
+        }
+
+        //여기서 k는 1이니깐 한개만 result에 넣어진다.
+        while(index < k){
+            result[index] = queue.poll();
+            index++
+        }
+
+        return result;
+
+    }
+
+
+    Comparator<int[]> Comp = new Comparator<int[]>(){
+
+        @Override
+        public int compare(int[] a, int[] b){
+
+            //a에 대한 오름차순
+            return (a[0]*a[0] + a[1]*a[1]) - (b[0]*b[0]+b[1]*b[1]);
+        }
+
+    }
+
+
     
 }

@@ -10,6 +10,9 @@ String:
     MergeInteval
     MeetingRoom2
     Jewels And Stones
+    KCloset
+    PlusOne
+    UniqueEmailAddress
 
 
 Graph(dfs & bfs)
