@@ -25,11 +25,19 @@ Queue&Stack
 
 
 
+Dynamic Programming
+    UniquePaths
+
+
 
 Graph(dfs & bfs):
     NumberOfIslands_dfs
 
 
+
+
+BackTracking
+    GenerateParentheses
 
     
 

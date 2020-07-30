@@ -1,5 +1,6 @@
 public class GenerateParentheses {
     
+
     public static void main(String[] args){
         GenerateParentheses object = new GenerateParentheses();
         System.out.println(object.generateParenthesis_dfs(3));
@@ -7,25 +8,24 @@ public class GenerateParentheses {
 
     int count = 0;
     public List<String> generateParenthesis_dfs(int n){
-        List<String> res = new ArrayList<>();
-        dfs(res, "", n, n, "");
-        return res;
-    }
+        List<String> result = new ArrayList<>();
+        dfs(result, "", n, n, "");
+        return result;
+    } 
 
-    private void dfs(List<String> list, String str, int left, int right, String str1){
+    private void dfs(List<String> result, String str, int left, int right){
         count++;
-        System.out.println("str\t"+str+"\t left: "+left+" right: "+right+" count: "+count+" str1: "+str1);
-        
+
         if(left < 0 || left > right){
             return;
         }
 
-        System.out.println("=str\t"+str+"\t left: "+left+" right: "+right+" count: "+count);
-	    if(left == 0 && right == 0){
-            list.add(str);
+        if(left == 0 && right == 0){
+            result.add(str);
             return;
         }
-        dfs(lst, str + '(', left -1, right, str1 + "+");
-        dfs(list, str + ')', left, right - 1, str1+"-");
+
+        dfs(result, str + '(', left -1, right);
+        dfs(result, str + ')', left, right - 1);
     }
 }
