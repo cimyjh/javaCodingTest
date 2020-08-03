@@ -12,6 +12,8 @@ String:
     KCloset
     PlusOne
     UniqueEmailAddress
+    lengthOfLongestSubstringTwoDistinct
+    MaxSubArray
 
 
 
@@ -32,6 +34,7 @@ Dynamic Programming
 
 Graph(dfs & bfs):
     NumberOfIslands_dfs
+    NumberOfIslands_bfs
 
 
 

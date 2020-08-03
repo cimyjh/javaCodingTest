@@ -15,6 +15,9 @@ public class NumberOfIslands_bfs {
         bfs는 외워야 한다.
 
 
+        for문 안에서 0으로 바꾸는 것 같다.
+
+
 
     */
 
@@ -33,10 +36,12 @@ public class NumberOfIslands_bfs {
         System.out.println(array);
 
     }
-    int[][] dirs = {{-1,0}, {1,0}, {0, -1}, {0,1}};
+    
     int m, n;
 
     public int solve(char[][] grid){
+
+        //에러처리 먼저
         if(grid == null ||grid.length == 0)
             return 0;
         
@@ -45,6 +50,8 @@ public class NumberOfIslands_bfs {
 
         int count = 0;
 
+
+        //2
         for(int i = 0; i < m; i++){
             for(int j = 0; j < n; j++){
                 if(grid[i][j] == '1'){
@@ -55,6 +62,11 @@ public class NumberOfIslands_bfs {
         }
         return count;
     }
+    
+
+    //좌표계를 만들어 둔다.
+    int[][] dirs = {{-1,0}, {1,0}, {0, -1}, {0,1}};
+
     public void bfs(char[][] grid, int x, int y){
         grid[x][y] = '0';
         Queue<int[]> queue = new LinkedList<>();
@@ -69,6 +81,8 @@ public class NumberOfIslands_bfs {
 
             for(int i = 0; i <size; i++){
                 for(int[] dir: dirs){
+
+                    //계산하는 좌표계
                     int dx = p[0] + dir[0];
                     int dy = p[1] + dir[1];
                     if(dx>=0 && dx < m && dy>=0 && dy < n && grid[dx][dy] == '1'){
