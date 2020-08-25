@@ -6,6 +6,7 @@ import java.util.Comparator;
 class Interval{
     int start;
     int end;
+
     Interval(){
         this.start = 0;
         this.end = 0;
@@ -19,8 +20,6 @@ class Interval{
 
 //sorting을 먼저 한다.
 //hold.end > cur.start
-
-
 
 public class MeetingRooms {
     public static void main(String[] args) {
@@ -37,14 +36,14 @@ public class MeetingRooms {
         System.out.println(a.solve(intervals));
     }
 
-    public boolean solve(Interval[] intervals) {
 
+    public boolean solve(Interval[] intervals) {
         //예외처리
         //null 체크
         if(intervals == null) return false;
         print(intervals);
 
-        //
+        //Compare해서 sort 하는 것
         Arrays.sort(intervals, Comp);
         System.out.println("===afrer sort ===");
         print(intervals);
@@ -68,6 +67,8 @@ public class MeetingRooms {
     Comparator<Interval> Comp = new Comparator<Interval>(){
         @Override
         public int compare(Interval a, Interval b){
+
+            //오름차순
             return a.start - b.start;
         }
     };

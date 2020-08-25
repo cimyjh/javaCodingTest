@@ -74,20 +74,17 @@ public class KClosest {
 
         int[][] result = new int[k][2];
         int index = 0;
-
         //정렬이 된 것을 queue에 넣는다(offer)
         for(int[] p: points){
             queue.offer(p)
         }
-
+        
         //여기서 k는 1이니깐 한개만 result에 넣어진다.
         while(index < k){
             result[index] = queue.poll();
             index++
         }
-
         return result;
-
     }
 
 

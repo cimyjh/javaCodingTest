@@ -18,12 +18,7 @@ class ListNode{
 
     값 올림은 carry를 사용
 
-
-    
-
     더미데이터를 하나를 만든다.
-
-
 
 */
 public class AddTwoNumbers {
@@ -47,11 +42,13 @@ public class AddTwoNumbers {
     public static ListNode solve(ListNode l1, ListNode l2 ){
         //데이터 준비
         ListNode newHead = new ListNode(0);
-        ListNode p1 = l1, p2 = l2, p3 = newHead;
+        ListNode p1 = l1;
+        ListNode p2 = l2;
+        ListNode p3 = newHead;
+
         int carry = 0;
-
-
         while(p1 != null || p2 != null){
+            
             if(p1 != null){
                 //캐리값을 준다. 캐리값에 p1을 주고 기존 p1은 날리고 p1.next를 넣는다.
                 carry+= p1.val;
@@ -68,11 +65,5 @@ public class AddTwoNumbers {
         }
         if(carry ==1 ) p3.next = new ListNode(1);
         return newHead.next;
-
-
-
-
     }
-
-
 }
